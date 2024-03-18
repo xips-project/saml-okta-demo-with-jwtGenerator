@@ -19,11 +19,14 @@ dependencies {
         implementation "org.opensaml:opensaml-saml-api:4.1.1"
         implementation "org.opensaml:opensaml-saml-impl:4.1.1"
     }
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.2'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
     implementation 'org.springframework.security:spring-security-saml2-service-provider'
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.12.5'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
 }
