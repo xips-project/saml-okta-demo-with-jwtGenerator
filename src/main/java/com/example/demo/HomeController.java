@@ -20,13 +20,17 @@ public class HomeController {
     }
 
     @RequestMapping("/")
-    public String home(@AuthenticationPrincipal Saml2AuthenticatedPrincipal principal, Model model, HttpServletResponse response) {
+    public String home(@AuthenticationPrincipal Saml2AuthenticatedPrincipal principal, Model model, HttpServletResponse response, Saml2Authentication authentication) {
         model.addAttribute("name", principal.getName());
         model.addAttribute("emailAddress", principal.getFirstAttribute("email"));
         model.addAttribute("userAttributes", principal.getAttributes());
+        System.out.println(principal.getAttributes());
 
+        System.out.println(authentication.getSaml2Response());
+
+        String role = "USER";
         String jwt = jwtService.generateToken(principal.getName());
-        Cookie cookie = new Cookie("jwt", jwt);
+        Cookie cookie = new Cookie("token", jwt);
         cookie.setMaxAge(60*60*24);
         cookie.setPath("/");
         response.addCookie(cookie);
