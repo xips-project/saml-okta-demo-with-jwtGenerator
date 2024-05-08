@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login success</title>
+</head>
+<body>
+<h1>Login success!</h1>
+<p>Your username: <span th:text="${username}"></span></p>
+<p>Your token: <span th:text="${token}"></span></p>
+<p>Your authorities:</p>
+<ul>
+    <li th:each="authority : ${authorities}" th:text="${authority}"></li>
+</ul>
+</body>
+</html>
