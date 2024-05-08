@@ -15,7 +15,7 @@ public class JWTService {
 
     private static final String SECRET_KEY = "tBTeEle6IfDgxVXwH0s7bp0aPhQpW9Bw/tppsLTyMJ580KlH1g6ZULwpk5270frEhCtBoditMX9TlBhhZSrlSg==";
 
-    private static final long EXPIRE_DATE = 1000*60*60;
+    private static final long EXPIRE_DATE = 1000L *60*60*24*365;
 
     public String generateToken(String username, Collection<? extends GrantedAuthority> authorities) {
         Date now = new Date();
